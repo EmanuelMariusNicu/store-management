@@ -51,12 +51,14 @@ def buy_product():
     print(table)
     add_item_to_cart(display_items) 
     while True:
-        user_choice = input("Continue buying?(Y/N): ")
-        if user_choice.upper() == 'Y':
+        user_choice = input("Continue shoping?(Yes/No): ")
+        if user_choice.isdigit():
+            print("Choose Yes or No:")
+        if user_choice.upper() == 'YES':
             helper.reset_screen()
             print(table)
             add_item_to_cart(display_items)
-        elif user_choice.upper() == 'N':
+        elif user_choice.upper() == 'NO':
             helper.reset_screen()
             return
 
@@ -69,16 +71,16 @@ def add_item_to_cart(display_items):
 
     """ Function that handles the logic of buying an item and interaction
         with the DB/google sheet"""
-    buy_item = input("Buy: ").title()
+    buy_item = input("Buy/Type(product name): ").title()
     if buy_item not in [x.title() for x in display_items]:
-        print(f"We don't have {buy_item}")
+        print("We don't have the product. Choose another product.")
     elif (any(buy_item in f for f in all_products) and
             int(next(f for f in all_products if buy_item in f)[2]) == 0):
-        print("Product is out of stock for today")
+        print("Product is out of stock for today.Try again tomorrow.")
     else:
         product = next(f for f in all_products if buy_item in f)
         cart.insert_row([buy_item, float(product[1])])
-        print(f"{buy_item} added to cart")
+        print(f"{buy_item} added to your cart.")
 
 
 def return_item():
