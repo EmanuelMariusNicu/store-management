@@ -51,7 +51,7 @@ def buy_product():
     print(table)
     add_item_to_cart(display_items) 
     while True:
-        user_choice = input("Buy more?(Y/N): ")
+        user_choice = input("Continue buying?(Y/N): ")
         if user_choice.upper() == 'Y':
             helper.reset_screen()
             print(table)
@@ -91,7 +91,7 @@ def return_item():
     cart_items = cart.get_values()
     is_item_in_cart = any(item_to_return in sublist for sublist in cart_items)
     if not is_item_in_cart:
-        print(f"You dont have {item_to_return} in your cart")
+        print(f"You dont have {item_to_return} in your cart.")
     else:
         for i in range(len(cart_items)):
             if item_to_return in cart_items[i]:
@@ -151,11 +151,11 @@ def pay_print_receipt():
             continue
         total += float(product[1])
     total = round(total, 2) * float(discount_value)
-    print(f"You have to pay {total}")
+    print(f"You have to pay {total} $")
 
     while float(user_paid) <= total:
         user_paid = input("Pay cash: ")
-    print(f"Your change is: {round(float(user_paid)-total,2)}")
+    print(f"Your change is: {round(float(user_paid)-total,2)} $")
     print("Have a nice day!")
     
     current_receipt = [f"Receipt {datetime.now()}", total]
@@ -188,7 +188,7 @@ def apply_discount_nr2():
     discount = ["Discount", 0.9]
     cart.insert_row(discount)
     discount_applied = True
-    print("Discount applied")
+    print("Discount applied.")
 
 
 def apply_discount_nr3():
@@ -201,6 +201,6 @@ def apply_discount_nr3():
         discount = ["Discount", 0.7]
         cart.insert_row(discount)
         discount_applied = True
-        print("Discount applied")
+        print("Discount applied.")
     else: 
         print("Discount cannot be applied, valid after 7PM")
