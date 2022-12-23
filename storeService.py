@@ -1,8 +1,8 @@
-from prettytable import PrettyTable as Table
 import datetime
+from prettytable import PrettyTable as Table
 import gspread
 from google.oauth2.service_account import Credentials
-
+import helper
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -108,7 +108,7 @@ def view_cart():
         print("Your cart is empty, buy something first.")
         return
     table = Table()
-    table.field_names = ["Product","Price"]
+    table.field_names = ["Product", "Price"]
     table.add_rows(table_values)
     print(table)
    
@@ -160,7 +160,7 @@ def pay_print_receipt():
     
     current_receipt = [f"Receipt {datetime.now()}", total]
     receipts.insert_row(current_receipt)
-    cart.delete_rows(1,len(products))
+    cart.delete_rows(1, len(products))
 
 
 def apply_discount_nr1():
@@ -185,7 +185,7 @@ def apply_discount_nr2():
     """#Discount 2 that the store has, a 10% off all products, with a voucher
 #(that the user suppposedly gives the cashier)"""
     global discount_applied
-    discount = ["Discount",0.9]
+    discount = ["Discount", 0.9]
     cart.insert_row(discount)
     discount_applied = True
     print("Discount applied")
@@ -193,12 +193,12 @@ def apply_discount_nr2():
 
 def apply_discount_nr3():
     """#discount 3 that the store has, if you buy within one hour of closing time,
-#a 30% disccount is applied to the cart"""
+        a 30% disccount is applied to the cart"""
     # Closing time is 20:00
     global discount_applied
     now = datetime.now()
     if now.hour >= 19:
-        discount = ["Discount",0.7]
+        discount = ["Discount", 0.7]
         cart.insert_row(discount)
         discount_applied = True
         print("Discount applied")

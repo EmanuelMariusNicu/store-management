@@ -3,6 +3,7 @@
 import storeService as store
 import helper
 
+
 def logo():
     print("""
 
@@ -15,7 +16,10 @@ def logo():
                                                        __/ |     
                                                       |___/      
 """)
+
+
 logo()
+
 
 def menu():
     print("""
@@ -28,6 +32,7 @@ def menu():
      7. Quit
      """)
 
+
 def discount_menu():
     """ Discount prices that apply"""
     print("""
@@ -37,12 +42,13 @@ def discount_menu():
      4. Back to menu
      """)
 
+
 def display_menu():
     while True:
         menu()
         user_choice = input("Select a choice: ")
 
-        #reset screen
+        # reset screen
         helper.reset_screen()
 
         if not user_choice.isdigit() or int(user_choice) not in range(1,8):
@@ -63,12 +69,13 @@ def display_menu():
         elif user_choice == "7":
             break
 
+
 def display_discount_menu():
     while True:
         discount_menu()
         user_choice = input("Select a choice: ")
 
-        #reset screen
+        # reset screen
         helper.reset_screen()
 
         if not user_choice.isdigit() or not int(user_choice) in range(1,5):
@@ -85,5 +92,6 @@ def display_discount_menu():
             break
         elif user_choice == "4":
             break
-          
+
+
 display_menu()
