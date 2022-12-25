@@ -1,12 +1,12 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
-
-import storeService as store
-import helper
 import colorama
 from colorama import Fore
+import storeService as store
+import helper
+
 
 def logo():
-    print(Fore.RED +"""
+    print(Fore.RED + """
    _____ _                                                      
   / ____| |                                                     
  | (___ | |_ ___  _ __ ___                                      
@@ -60,7 +60,7 @@ def display_menu():
         # reset screen
         helper.reset_screen()
 
-        if not user_choice.isdigit() or int(user_choice) not in range(1,8):
+        if not user_choice.isdigit() or int(user_choice) not in range(1, 8):
             print("Please select a valid option number from 1-7")
 
         if user_choice == "1":
