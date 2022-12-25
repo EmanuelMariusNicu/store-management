@@ -2,10 +2,11 @@
 
 import storeService as store
 import helper
-
+import colorama
+from colorama import Fore
 
 def logo():
-    print("""
+    print(Fore.RED +"""
    _____ _                                                      
   / ____| |                                                     
  | (___ | |_ ___  _ __ ___                                      
@@ -24,9 +25,12 @@ def logo():
 
 logo()
 
+print(Fore.BLUE + """Welcome to our Store Management App shop cart. 
+Use the menu below to continue:""")
+
 
 def menu():
-    print("""
+    print(Fore.CYAN + """
      1. View Products
      2. Buy Item
      3. Return Item
@@ -51,7 +55,7 @@ def discount_menu():
 def display_menu():
     while True:
         menu()
-        user_choice = input("Select a choice from above 1-7: ")
+        user_choice = input("Select a choice from 1-7 to continue: ")
 
         # reset screen
         helper.reset_screen()
@@ -72,7 +76,14 @@ def display_menu():
         elif user_choice == "6":
             store.pay_print_receipt()
         elif user_choice == "7":
+            exit_print_message()
             break
+
+
+def exit_print_message():
+    print("Thank you for using Store Management App.") 
+    print("This app was developed by Marius Emanuel Nicusor.")
+    print("Finished..")   
 
 
 def display_discount_menu():

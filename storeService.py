@@ -2,7 +2,11 @@ import datetime
 from prettytable import PrettyTable as Table
 import gspread
 from google.oauth2.service_account import Credentials
+import colorama
+from colorama import Fore
 import helper
+
+
 SCOPE = [
     "https://www.googleapis.com/auth/spreadsheets",
     "https://www.googleapis.com/auth/drive.file",
@@ -156,11 +160,11 @@ def pay_print_receipt():
     print(f"You have to pay {total} $")
 
     while float(user_paid) <= total:
-        user_paid = input("Pay cash: ")
+        user_paid = input("Amount you pay cash: ")
     print(f"Your change is: {round(float(user_paid)-total,2)} $")
     print("Have a nice day!")
     
-    current_receipt = [f"Receipt {datetime.now()}", total]
+    current_receipt = [f"Receipt {datetime.datetime.now()}", total]
     receipts.insert_row(current_receipt)
     cart.delete_rows(1, len(products))
 
@@ -198,7 +202,7 @@ def apply_discount_nr3():
         a 30% disccount is applied to the cart"""
     # Closing time is 20:00
     global discount_applied
-    now = datetime.now()
+    now = datetime.datetime.now()
     if now.hour >= 19:
         discount = ["Discount", 0.7]
         cart.insert_row(discount)
