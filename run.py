@@ -26,8 +26,6 @@ def logo():
 """)
 
 
-
-
 print(Fore.BLUE + """Welcome to our Store Management App shop cart. 
 Use the menu below to continue:""")
 
@@ -71,7 +69,6 @@ def display_menu():
 
         # reset screen
         helper.reset_screen()
-
 
         if not user_choice.isdigit() or int(user_choice) not in range(1, 8):
             print("Please select a valid option number from 1-8")
