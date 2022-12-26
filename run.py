@@ -10,23 +10,23 @@ import helper
 
 def logo():
     print(Fore.GREEN + """
-   _____ _                                                      
-  / ____| |                                                     
- | (___ | |_ ___  _ __ ___                                      
-  \___ \| __/ _ \| '__/ _ \                                     
-  ____) | || (_) | | |  __/                                     
- |_____/ \__\___/|_|  \___|                                _    
- |  \/  |                                                 | |   
+   ________
+  / ____| |
+ | (___ | |_ ___  _ __ ___
+  \___ \| __/ _ \| '__/ _ \
+  ____) | || (_) | | |  __/ 
+ |_____/ \__\___/|_|  \___|                                _
+ |  \/  |                                                 | |
  | \  / | __ _ _ __   __ _  __ _  ___ _ __ ___   ___ _ __ | |_  
- | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '_ ` _ \ / _ \ '_ \| __| 
- | |  | | (_| | | | | (_| | (_| |  __/ | | | | |  __/ | | | |_  
- |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_| |_| |_|\___|_| |_|\__| 
+ | |\/| |/ _` | '_ \ / _` |/ _` |/ _ \ '_ ` _ \ / _ \ '_ \| __|
+ | |  | | (_| | | | | (_| | (_| |  __/ | | | | |  __/ | | | |_
+ |_|  |_|\__,_|_| |_|\__,_|\__, |\___|_| |_| |_|\___|_| |_|\__|
                             __/ |                               
                            |___/                                
 """)
 
 
-print(Fore.BLUE + """Welcome to our Store Management App shop cart. 
+print(Fore.BLUE + """Welcome to our Store Management App shop cart.
 Use the menu below to continue:""")
 
 
@@ -94,9 +94,9 @@ def display_menu():
 
 
 def exit_print_message():
-    print("Thank you for using Store Management App.") 
+    print("Thank you for using Store Management App.")
     print("This app was developed by Marius Emanuel Nicusor.")
-    print("Finished..")   
+    print("Finished..")
 # Function discount menu inside discount that applies for products
 
 
@@ -108,7 +108,7 @@ def display_discount_menu():
         # reset screen
         helper.reset_screen()
 
-        if not user_choice.isdigit() or not int(user_choice) in range(1,5):
+        if not user_choice.isdigit() or not int(user_choice) in range(1, 5):
             print("Please select a valid option number from 1-4")
 
         if user_choice == "1":

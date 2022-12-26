@@ -32,11 +32,10 @@ def view_products():
     table = Table()
     table.field_names = table_values[0]
     table.add_rows(table_values[1:])
-    print(table)  
-
+    print(table)
 # So any changes to it will be reflected and stored online, not in memory
 # Displays just the product names and on which Aisle we can find them
-# We can keep adding items to cart, until we type N or n to exit the 
+# We can keep adding items to cart, until we type N or n to exit the
 # Buying function and return to main menu
 
 
@@ -53,7 +52,7 @@ def buy_product():
     table.field_names = ailes
     table.add_row(display_items)
     print(table)
-    add_item_to_cart(display_items) 
+    add_item_to_cart(display_items)
     while True:
         user_choice = input("Continue shoping?(Yes/No): ")
         if user_choice.isdigit():
@@ -78,18 +77,24 @@ def add_item_to_cart(display_items):
     buy_item = input("Buy/Type(product name): ").title()
     if buy_item not in [x.title() for x in display_items]:
         print("We don't have the product. Choose another product.")
-    elif (any(buy_item in f for f in all_products) and
-            int(next(f for f in all_products if buy_item in f)[2]) == 0):
+        try:
+            prod_out_stock = int(next(
+                             f for f in all_products if buy_item in f)[2]) == 0
+        except ValueError:
+            print("Error trying to find item!")
+    elif any(buy_item in f for f in all_products) and prod_out_stock:
         print("Product is out of stock for today.Try again tomorrow.")
-    else:
-        product = next(f for f in all_products if buy_item in f)
+        try:
+            product = next(f for f in all_products if buy_item in f)
+        except ValueError:
+            print("Error finding product!")
         cart.insert_row([buy_item, float(product[1])])
         print(f"{buy_item} added to your cart.")
 
 
 def return_item():
-    """   Function used to discard/return an item from the cart if we bought 
-          to many or changed our minds, you must return an item that you put 
+    """ Function used to discard/return an item from the cart if we bought
+        to many or changed our minds, you must return an item that you put
           in the cart in the first place, otherwise it gives an error """
     view_cart()
     item_to_return = input("What item you wish to return: ").title()
@@ -107,7 +112,7 @@ def return_item():
 
 
 def view_cart():
-    """Function to display the products currently in our cart when 
+    """Function to display the products currently in our cart when
         you want to see if you forgot something"""
     table_values = cart.get_values()
     if len(table_values) == 0:
@@ -117,7 +122,7 @@ def view_cart():
     table.field_names = ["Product", "Price"]
     table.add_rows(table_values)
     print(table)
-   
+    
 
 def apply_discount(option):
 
@@ -137,11 +142,11 @@ def apply_discount(option):
     if option == 2:
         apply_discount_nr2()
     if option == 3:
-        apply_discount_nr3() 
+        apply_discount_nr3()
 
 
 # Function also prints a receipt, for internal use, that is stored online
-# Receipt/purchase that was done, for accountant, to trac total revenue 
+# Receipt/purchase that was done, for accountant, to trac total revenue
 # (functionality to be added later)
 # It takes into account the discount when calculating the payment
 
@@ -175,14 +180,12 @@ def pay_print_receipt():
         if not user_paid.isdigit():
             print("Please insert digits!")
         if user_paid.isdigit() and float(user_paid) <= total:
-            print("Your shopings amount is bigger.Please insert correct amount!")
+            print(
+                "Your shopings amount is bigger.Please insert correct amount!")
         if user_paid.isdigit() and float(user_paid) >= total:
-        
             break
-          
     print(f"Your change is: {round(float(user_paid)-total,2)} $")
     print("Have a nice day!")
-    
     current_receipt = [f"Receipt {datetime.datetime.now()}", total]
     receipts.insert_row(current_receipt)
     cart.delete_rows(1, len(products))
@@ -200,7 +203,7 @@ def apply_discount_nr1():
         if "Milk" in cart_values[i]:
             milk_cartons += 1
             if milk_cartons == 3:
-                cart.update_cell(i+1,2,0)
+                cart.update_cell(i+1, 2, 0)
                 milk_cartons = 0
     discount_applied = True
 
@@ -227,7 +230,7 @@ def apply_discount_nr3():
         cart.insert_row(discount)
         discount_applied = True
         print("Discount applied.")
-    else: 
+    else:
         print("Discount cannot be applied, valid after 7PM")
 
 
@@ -241,4 +244,5 @@ def show_total_sale():
     table.add_rows(receipts_values)
     print(table)
     print(f"Total sum of receipts this month is: {total_sum} $")
+
 
