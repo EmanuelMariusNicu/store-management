@@ -1,5 +1,7 @@
 # Developer: Marius Emanuel Nicusor
 # Store Management App
+![image](https://user-images.githubusercontent.com/108750655/209576917-8841ee04-10d3-4acb-9faa-6046995ea13e.png)
+
 
 The Store Management App was created as Portfolio Project #3 (Python Essentials) for Diploma in Full Stack Software Development at Code Institute. It allows users to simulate/manage an online shoping cart while they can view products, add to cart, remove from cart,apply discounts, pay and print receipts and see a total of the receipts and sum of the products that were sold.
 
@@ -29,6 +31,9 @@ Project purpose was to build a command-line python application that allows user 
     *   [Software used](#software-used)
     *   [Python libraries/modules](#python-librariesmodules)
 5. [Testing](5-#testing)
+    *   [Automation testing](#automation-testing)
+        *   [Lighthouse testing](#lighthouse-testing)
+        *   [W3C CSS Validator](#w3c css validator)
     *   [Manual testing](#manual-testing)
     *   [Bugs/known issues](#bugsknown-issues)
 6. [Deployment](6-#deployment)
@@ -43,7 +48,7 @@ Project purpose was to build a command-line python application that allows user 
 # 1. Project
 ##  Strategy/Scope
 
-I chose to develop an application that can be used in real life. Store Management allows users to manage a dataset online grocery shop. Application offers such functionalities as: viewing grocery shop products, adding/returning, view cart, adding discounts, pay and print receipts and quit terminal.
+I chose to develop an application that can be used in real life. Store Management allows users to manage a dataset for a grocery shop. Application offers such functionalities as: viewing grocery shop products, adding/returning, view cart, adding discounts, pay and print receipts , show total sum and receipts and quit terminal.
 
 Application should have clean and intuitive user interface and offer easy access and navigation to all functionalities.
 
@@ -105,7 +110,7 @@ The receipts google sheet is only available for admin when using "7. Show total 
 
 ### Main menu
 
-Start screen of the application consists of ASCII logo, welcome message and main menu with 8 options. User input is validated.
+Start screen of the application consists of ASCII logo of "Store management" which only appears for 6 seconds, then main menu with 8 options displayed. User input is validated.
 
 ![image](https://user-images.githubusercontent.com/108750655/209536228-fc098d8b-4de1-4c49-a211-fb4f032f1111.png)
 
@@ -204,6 +209,11 @@ This function terminates the program.
 - [time](https://docs.python.org/3/library/time.html) - built-in python module - used to delay logo 
 
 #    Testing
+## Automation testing
+### Lighthouse testing
+![image](https://user-images.githubusercontent.com/108750655/209577928-896b26e7-f25b-431c-a726-bd10f38f2f99.png)
+###   W3C CSS Validator
+No errors found.
 ## Manual testing
 
 Details of manual testing can be found in [TESTING.md file](https://github.com/EmanuelMariusNicu/store-management/blob/main/TESTING.md)
