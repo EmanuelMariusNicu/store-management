@@ -4,6 +4,8 @@ from colorama import Fore
 import storeService as store
 import helper
 
+# Function to display ASCI text about app logo
+
 
 def logo():
     print(Fore.GREEN + """
@@ -27,6 +29,7 @@ logo()
 
 print(Fore.BLUE + """Welcome to our Store Management App shop cart. 
 Use the menu below to continue:""")
+# Menu function
 
 
 def menu():
@@ -36,11 +39,11 @@ def menu():
      3. Return Item
      4. View Cart
      5. Apply Discount
-     6. Pay and Print Receipt
-     7. Show total
+     6. Pay and print receipts
+     7. Show total receipts(admin use)
      8. Quit
      """)
-
+# Discount function that applies for all products
 
 def discount_menu():
     """ Discount prices that apply"""
@@ -51,7 +54,7 @@ def discount_menu():
      3. 30% off one hour before closing time(8PM)
      4. Back to menu
      """)
-
+# Menu function for choices from 1 to 8
 
 def display_menu():
     while True:
@@ -81,12 +84,14 @@ def display_menu():
         elif user_choice == "8":            # Menu quit choice
             exit_print_message()
             break
+# Messages printed in terminal when exit app
 
 
 def exit_print_message():
     print("Thank you for using Store Management App.") 
     print("This app was developed by Marius Emanuel Nicusor.")
     print("Finished..")   
+# Function discount menu inside discount that applies for products
 
 
 def display_discount_menu():
