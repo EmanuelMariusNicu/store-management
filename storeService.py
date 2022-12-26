@@ -170,8 +170,16 @@ def pay_print_receipt():
     print("See you next time!")
     print(f"You have to pay {total} $")
 
-    while float(user_paid) <= total:
+    while True:
         user_paid = input("Amount you pay cash: ")
+        if not user_paid.isdigit():
+            print("Please insert digits!")
+        if user_paid.isdigit() and float(user_paid) <= total:
+            print("Your shopings amount is bigger.Please insert correct amount!")
+        if user_paid.isdigit() and float(user_paid) >= total:
+        
+            break
+          
     print(f"Your change is: {round(float(user_paid)-total,2)} $")
     print("Have a nice day!")
     
