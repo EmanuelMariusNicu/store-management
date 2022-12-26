@@ -160,6 +160,9 @@ def pay_print_receipt():
             continue
         total += float(product[1])
     total = round(total, 2) * float(discount_value)
+    print("Don't forget about our discounts!!")
+    print("Thank you for shoping with us today!!")
+    print("See you next time!")
     print(f"You have to pay {total} $")
 
     while float(user_paid) <= total:
