@@ -23,6 +23,7 @@ Project purpose was to build a command-line python application that allows user 
         *   [View cart](#view-cart)
         *   [Apply discounts](#apply-discounts)
         *   [Pay and print receipts](#pay-and-print-receipts)
+        *   [Show total/admin use](#show-totaladmin-use)
         *   [Quit](#quit)
 4. [Technology](4-#technology)
     *   [Software used](#software-used)
@@ -89,19 +90,130 @@ Starting screen of the app with logo and menu:
 
 ## Database structure
 
-Google Sheets service is used to store project's database in the spreadsheet. There are two worksheets, one to store store products and second to store information about sorting methods.
+Google Sheets service is used to store project's database in the spreadsheet. There are three worksheets, one to store grocery store products, second to store cart products and last sheet information about receipts.
 
-Worksheet "library" is used to store book entries:
+Worksheet "library" is used to store book entry
+Main table consists of three colums: products, price and quantity. 
+![image](https://user-images.githubusercontent.com/108750655/209533713-378568a9-1269-4298-a6fd-71e23046025a.png)  
 
-![database](docs/img/database.png)
+The cart google sheet is automated populated once customer buy products.
+![image](https://user-images.githubusercontent.com/108750655/209534415-01ef474d-ed06-4c2e-8682-f41c1dd0d16f.png)
 
-Main table consists of six colums: ID, title, author, category, status and description. The ID value works as a ordinal number for database. It's not unique and fix value assigned to a book.
 
-Each column has individually assigned value that represents maximum length of the string that can be input by user. It's 2, 24, 18, 12, 8 and 200 characters respectively. Exceeding that limit results in error and feedback sent to the user. This limitation is necessary to correctly display the table in the terminal which maximum length is 80 characters.  
+The receipts google sheet is only available for admin when using "7. Show total receipts" from main menu.
+![image](https://user-images.githubusercontent.com/108750655/209534704-73ffbbec-bf1e-410a-a969-d496bef7d4f3.png)
 
-The ID column value is assigned automatically when new book is added and also all ID values are renumbered when book is removed.
+## Features
 
-Worksheet "config" is used to store values for default and optional sorting method:
+### Main menu
 
-![config](docs/img/config.png)
+Start screen of the application consists of ASCII logo, welcome message and main menu with 8 options. User input is validated.
 
+![image](https://user-images.githubusercontent.com/108750655/209536228-fc098d8b-4de1-4c49-a211-fb4f032f1111.png)
+
+
+### View products
+
+This feature allows user to view products that are available and products that are out of stock. User can see product name, price and quantity available.
+![image](https://user-images.githubusercontent.com/108750655/209536579-e943f680-863a-477b-ab3a-b1489c0ed333.png)
+
+### Buy item
+
+This function allows user to buy products. 
+When using buy item user will have to type product name in order to add it to the cart.
+![image](https://user-images.githubusercontent.com/108750655/209536970-4c5f6361-b681-4968-b57f-fad3194c5a65.png)
+After buying first product than will get a message if he wants to continue shopping or no. 
+![image](https://user-images.githubusercontent.com/108750655/209537268-92a28d80-b4cc-41d1-bdb3-9c400f97b0cf.png)
+If user press "no" will be redirected to main menu.If user press "yes" will can continue shopping. If user type something different than product name will get a message to "choose another product".
+![image](https://user-images.githubusercontent.com/108750655/209537590-67d4dc59-a58a-4782-af2d-4cc488dc315e.png)
+
+
+
+### Return item
+
+This function allows user to delete product from cart. User is asked to type what item he wants to return. The input is validated.
+![image](https://user-images.githubusercontent.com/108750655/209538169-1c5cd3cb-5a7a-430a-a6fb-6628f01264cf.png)
+
+
+If user write something different from what is inside cart will get a message like this.![image](https://user-images.githubusercontent.com/108750655/209538094-0cb42de5-9b83-486b-ac2d-22d05dad32d7.png)
+
+
+### View cart
+
+This function allows user to view all products from the cart.
+![image](https://user-images.githubusercontent.com/108750655/209538372-8c04e11d-c125-4454-a218-87e31b8651ed.png)
+
+
+### Apply discounts
+
+This feature allows user to choose a discount option from "Apply Discount Menu". User has 4 options. 
+![image](https://user-images.githubusercontent.com/108750655/209538829-4effaf58-6dcd-4f41-8c5f-fa9440e75dc4.png)
+
+### Pay and print receipts
+
+This function allows user make payment for all the products in the cart.
+![image](https://user-images.githubusercontent.com/108750655/209540000-ddc83a6a-f92e-4537-931c-c2d32ed681e3.png)
+User will be asked about cash amount for payment. Once the amount is entered then change is printed on the terminal. 
+![image](https://user-images.githubusercontent.com/108750655/209540468-8ee2b963-6e16-4ae7-8512-81adeac46341.png)
+
+### Show total/admin use
+
+This function is only for internal use. Helps administrator to have a balance about sales. Prints all receipts and total sales.
+![image](https://user-images.githubusercontent.com/108750655/209544698-f9cf86f5-ae8d-44c3-92f0-87b7af121fda.png)
+
+### Quit
+
+This function terminates the program.
+![image](https://user-images.githubusercontent.com/108750655/209545061-1aac7e25-d797-4aeb-a703-a7f2a1a56aec.png)
+
+#   Technology
+    
+##  Languages used
+
+-   [Python](https://www.python.org/) - high-level, general-purpose programming language
+-   [Markdown](https://en.wikipedia.org/wiki/Markdown) - markup language used to write README
+
+##  Software used
+
+- [Font Awesome:](https://fontawesome.com/) - Font Awesome icons were used for social links in terminal display page.
+
+- [Git](https://git-scm.com/) - Git was used for version control by utilizing the Gitpod terminal to commit to Git and Push to GitHub.
+
+- [GitHub](https://github.com/) - GitHub is used to store the project's code after being pushed from Git.
+
+- [Google Sheets API](https://developers.google.com/sheets/api) - was used to connect with the database made of the spreadsheet.
+
+- [Heroku](https://heroku.com) - online app used to deploy project.
+
+- [VisualStudioCode](https://code.visualstudio.com/) - VSC used to write the app.
+
+- [Text ASCII Art Generator](http://patorjk.com/software/taag/) - used to create app logo in ASCII format.
+
+##  Python libraries/modules
+
+- [gspread](https://docs.gspread.org/) - used for control Google Sheets API by python.
+
+- [OAuthLib](https://pypi.org/project/oauthlib/) - required to manage HTTP request and authenticate to Google Sheets API.
+
+- [PrettyTable](https://pypi.org/project/prettytable/) - python library for easily displaying tabular data in a visually appealing ASCII table format.
+
+- [colorama](https://pypi.org/project/colorama/) - used to color terminal outputs.
+
+- [os](https://docs.python.org/3/library/os.html) - built-in pythod module - used to write clear_terminal function.
+
+- [datetime](https://docs.python.org/3/library/datetime.html) - built-in python module - used to show receipts date and time.
+
+
+#    Testing
+
+##   Accessibility
+
+[WebAIM](https://webaim.org/resources/contrastchecker/) online tool was used to check terminal colour contrast. All used colours passsed the test satisfactory.
+
+![color1](docs/img/contrast1.png)
+
+![color2](docs/img/contrast2.png)
+
+![color3](docs/img/contrast4.png)
+
+![color4](docs/img/contrast5.png)
