@@ -72,20 +72,29 @@ Function used to apply discounts
 | Discounts available from 1-4 | "2"  | Valid input, Discount applied  | Pass
 | Discounts available from 1-4 | "3"  | Valid input, Discount applied   | Pass
 | Discounts available from 1-4 | "4"  | valid input, Back to main menu | Pass
-| Discounts available from 1-4 | "1", "database empty"  | Valid input, Discount applied| Pass
-| Discounts available from 1-4 | "2" , "database empty" | Valid input, Discount applied  | Pass
-| Discounts available from 1-4 | "3" , "database empty" | Valid input, Discount applied   | Pass
-| Discounts available from 1-4 | "4" , "database empty" | valid input, Back to main menu | Pass
-# Show book details function
-Function used for inputs validation - validate_num_range in utils/utils.py
+| Discounts available from 1-4 | "1", "database empty"  | Valid input, Your cart is empty,buy something first.| Pass
+| Discounts available from 1-4 | "2" , "database empty" | Valid input, Your cart is empty,buy something first. | Pass
+| Discounts available from 1-4 | "3" , "database empty" | Valid input, Your cart is empty,buy something first. | Pass
+| Discounts available from 1-4 | "4" , "database empty" | valid input, Your cart is empty,buy something first.| Pass
 
+
+# Pay and print receipts function
+Pay for products and receive receipt
 |  What is being tested  | Input  | Expected response  | Result
 |---|---|---|---|
-| Which book details would you like to see? | "6" (5 records exist)  | Wrong input  | Pass
-| Which book details would you like to see? | "5"  | Valid input, show book details  | Pass
-| Which book details would you like to see? | "asd", "!"  | Wrong input  | Pass
-| Which book details would you like to see? | "2", (1 record exists)  | Valid input, prompt user to select the only entry available  | Pass
+| Pay and print receipts | Amount to pay "20" >= products total value  |Valid input, show change amount  | Pass
+| Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
+| Pay and print receipts | Amount to pay,"abc"  |Wrong input,Please insert digits!  | Pass
+| Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
 
+# Shot total receipts
+Pay for products and receive receipt
+|  What is being tested  | Input  | Expected response  | Result
+|---|---|---|---|
+| Pay and print receipts | Amount to pay  |Valid input, show change amount  | Pass
+| Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
+| Pay and print receipts | Amount to pay,"abc"  |Wrong input, show change amount  | Pass
+| Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
 # Quit function
 
 |  What is being tested  | Input  | Expected response  | Result
