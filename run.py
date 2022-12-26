@@ -1,4 +1,5 @@
 # Write your code to expect a terminal of 80 characters wide and 24 rows high
+import time
 import colorama
 from colorama import Fore
 import storeService as store
@@ -25,10 +26,12 @@ def logo():
 """)
 
 
-logo()
+
 
 print(Fore.BLUE + """Welcome to our Store Management App shop cart. 
 Use the menu below to continue:""")
+
+
 # Menu function
 
 
@@ -59,12 +62,16 @@ def discount_menu():
 
 
 def display_menu():
+    logo()
+    time.sleep(6)
+    helper.reset_screen()
     while True:
         menu()
         user_choice = input("Select a choice from 1-8 to continue: ")
 
         # reset screen
         helper.reset_screen()
+
 
         if not user_choice.isdigit() or int(user_choice) not in range(1, 8):
             print("Please select a valid option number from 1-8")

@@ -237,7 +237,6 @@ def show_total_sale():
     total_sum = 0
     for receipt in receipts_values:
         total_sum = round(total_sum, 2) + float(receipt[1])
-       # total_sum += float(receipt[1])
     table.field_names = ["Receipt Name", "Price($)"]
     table.add_rows(receipts_values)
     print(table)
