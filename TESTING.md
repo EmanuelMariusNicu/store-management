@@ -87,20 +87,14 @@ Pay for products and receive receipt
 | Pay and print receipts | Amount to pay,"abc"  |Wrong input,Please insert digits!  | Pass
 | Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
 
-# Shot total receipts
+# Show total receipts
 Pay for products and receive receipt
 |  What is being tested  | Input  | Expected response  | Result
 |---|---|---|---|
-| Pay and print receipts | Amount to pay  |Valid input, show change amount  | Pass
-| Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
-| Pay and print receipts | Amount to pay,"abc"  |Wrong input, show change amount  | Pass
-| Pay and print receipts | Amount to pay, "database empty" |Valid input, Your cart is empty,buy something first | Pass
+|Show total receipts| "7" |Valid input, show all receipts and sum in a tabel | Pass
+
 # Quit function
 
 |  What is being tested  | Input  | Expected response  | Result
 |---|---|---|---|
-| Correctly display random quote on exit screen? | N/A  | Random quote printed to the terminal  | Pass
-| Are you sure you want to quit? | "n"  | Valid input, retur  | Pass
-| Are you sure you want to quit? | "0", "!", empty | Wrong input | Pass
-| Are you sure you want to quit? | "y"  | Valid input, terminate program  | Pass
-| Correctly display random next read suggestion? | N/A  | Random next read suggestion printed to the terminal  | Pass
+| Quit | "8"  | Valid input, Quit program  | Pass|
