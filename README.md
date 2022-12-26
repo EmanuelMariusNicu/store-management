@@ -1,7 +1,7 @@
 # Developer: Marius Emanuel Nicusor
 # Store Management App
 
-The Store Management App was created as Portfolio Project #3 (Python Essentials) for Diploma in Full Stack Software Development at Code Institute. It allows users to simulate/manage an online shoping cart while they can view products, add to cart, remove from cart,apply discounts, pay and print receipts.
+The Store Management App was created as Portfolio Project #3 (Python Essentials) for Diploma in Full Stack Software Development at Code Institute. It allows users to simulate/manage an online shoping cart while they can view products, add to cart, remove from cart,apply discounts, pay and print receipts and see a total of the receipts and sum of the products that were sold.
 
 Project purpose was to build a command-line python application that allows user to manage a common dataset about a particular domain.
 
@@ -266,3 +266,17 @@ If I had more time or decide to develop app further I would add/improve followin
 - export database to external file in printable version.
 - search database function
 
+#   Credits
+
+##  Code
+
+- Google Sheets API connection method is taken from Love Sandwiches CI Project and gspread documentation - in /api/google_sheets_api.py
+- [Stack Overflow](https://stackoverflow.com/questions/2084508/clear-terminal-in-python) - method used to write clear_terminal
+
+## Learning resources
+
+- [Code Institute course and learning platform](https://codeinstitute.net/)
+- [StackOverflow](https://stackoverflow.com/)
+- [W3Schools](https://www.w3schools.com/python/default.asp)
+- [Google Sheets API documentation](https://developers.google.com/sheets/api/quickstart/python)
+- [Gspread documentation](https://docs.gspread.org/en/v5.7.0/)
