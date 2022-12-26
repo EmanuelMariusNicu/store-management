@@ -31,6 +31,7 @@ Project purpose was to build a command-line python application that allows user 
     *   [Software used](#software-used)
     *   [Python libraries/modules](#python-librariesmodules)
 5. [Testing](5-#testing)
+    *   [Validation](#validation)
     *   [Automated testing](#automated-testing)
         *   [Lighthouse testing](#lighthouse-testing)
         *   [W3C CSS Validator](#w3c-css-validator)
@@ -41,8 +42,6 @@ Project purpose was to build a command-line python application that allows user 
     *   [Deployment to Heroku](#deployment-to-heroku)
 7. [Credits](8-#credits)
     *   [Code](#code)
-    *   [Media](#media)
-    *   [Acknowledgements](#acknowledgements)
 
 # 1. Project
 ##  Strategy/Scope
@@ -208,6 +207,14 @@ This function terminates the program.
 - [time](https://docs.python.org/3/library/time.html) - built-in python module - used to delay logo 
 
 # 5.  Testing
+## Validation
+
+### PEP8
+
+[PEP8CI](https://pep8ci.herokuapp.com/) app was used to lint the code. All modules are clear, no errors found. In app_menu.py linter shows couple of warnings regarding whitespaces and escape character in app logo created in "text to ASCII generator". This doesn't affect any functionalities and code is interpreted as intended, terminal output is displayed as intended.
+![image](https://user-images.githubusercontent.com/108750655/209583526-f5d8aab5-b789-49db-b749-9390cdc02ebb.png)
+![image](https://user-images.githubusercontent.com/108750655/209583568-858ba24f-2bdb-4449-9427-fddc3d46f203.png)
+
 ## Automated testing
 ### Lighthouse testing
 ![image](https://user-images.githubusercontent.com/108750655/209577928-896b26e7-f25b-431c-a726-bd10f38f2f99.png)
@@ -219,14 +226,7 @@ Details of manual testing can be found in [TESTING.md file](https://github.com/E
 
 ##   Bugs/known issues
 
-- <b>Issue #1:</b> 
-
-- <b>Solution:</b> 
-
-
-- <b>Issue #2:</b> 
-
-- <b>Solution:</b>
+- <b>Issue #1:</b> The app needs more polish. It can be a lot more to implement as functionality as for design as well.
 
 # 6.  Deployment
 
