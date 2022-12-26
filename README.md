@@ -29,8 +29,6 @@ Project purpose was to build a command-line python application that allows user 
     *   [Software used](#software-used)
     *   [Python libraries/modules](#python-librariesmodules)
 5. [Testing](5-#testing)
-    *   [Accessibility](#accessibility)
-    *   [Validation](#validation)
     *   [Manual testing](#manual-testing)
     *   [Bugs/known issues](#bugsknown-issues)
 6. [Deployment](6-#deployment)
@@ -188,7 +186,7 @@ This function terminates the program.
 - [VisualStudioCode](https://code.visualstudio.com/) - VSC used to write the app.
 
 - [Text ASCII Art Generator](http://patorjk.com/software/taag/) - used to create app logo in ASCII format.
-
+- 
 ##  Python libraries/modules
 
 - [gspread](https://docs.gspread.org/) - used for control Google Sheets API by python.
@@ -203,8 +201,68 @@ This function terminates the program.
 
 - [datetime](https://docs.python.org/3/library/datetime.html) - built-in python module - used to show receipts date and time.
 
+- [time](https://docs.python.org/3/library/time.html) - built-in python module - used to delay logo 
 
 #    Testing
 ## Manual testing
 
 Details of manual testing can be found in [TESTING.md file](https://github.com/EmanuelMariusNicu/store-management/blob/main/TESTING.md)
+
+##   Bugs/known issues
+
+- <b>Issue #1:</b> 
+
+- <b>Solution:</b> 
+
+
+- <b>Issue #2:</b> 
+
+- <b>Solution:</b>
+
+#   Deployment
+
+## Git and GitHub
+
+1. [Code Institute template](https://github.com/Code-Institute-Org/python-essentials-template) was used to create GitHub public repository [store-management-app](https://github.com/EmanuelMariusNicu/store-management). In template repository I clicked on "use this template" --> "create new repository", I chose repository name and clicked on the green button "Create repository from template".
+
+2. I cloned repository to my local machine using GitHub Desktop and opened it in VisualStudioCode.
+3. I developed programm, often commiting changes and pushing code to GitHub.
+4. I made sure that all my libraries and packages are listed in [requirements.txt](https://github.com/EmanuelMariusNicu/store-management/blob/main/requirements.txt).
+5. When program was ready for further deployment I visited heroku.com website to deploy on heroku.
+
+## Deployment to Heroku
+
+1. I visited [https://heroku.com/](https://heroku.com/) and opened dashboard. Then I clicked button "New" and selected "Create new app" button.
+
+2. I entered my app name as "store-management-app-ci", chose region to Europe and clicked on "Create app" button
+
+
+3. The next step was to go to "Deploy" tab and then to "Deployment method" section to authorize and connect my GitHub account.
+
+
+4. Upon succesfull connection I selected main branch from "store-management-app" repository.
+
+
+5. Then I went to "Settings" tab.
+
+
+6. In the next step I went to "Config Vars" section and added KEY "CREDS" - that maches my token name defined in python constant in [api/google_sheets_api.py] - with value of my credentials token.
+
+7. I added key "PORT" with value "8080" and save changes.
+
+6. In the next step I went back to "Deploy" tab and decided to use manual deployement, however automatic mode is also available to deploy chosen branch.
+
+
+7. The link to my deployed app was shown on screen: [https://store-management-base.herokuapp.com/](https://home-library-app-ci.herokuapp.com/)
+
+<br>
+
+# Possible future development
+
+If I had more time or decide to develop app further I would add/improve following functionalities: 
+- adding/editing/removing book categories instead of typing desired name. That would help keep DB entries more consistent and make input easier for the user. 
+- add function to analyze description input by user and save it in database preserving capital letters for e.g. names, new sentences,
+- add user accounts/multiple database,
+- export database to external file in printable version.
+- search database function
+
