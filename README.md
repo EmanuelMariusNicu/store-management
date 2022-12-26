@@ -205,15 +205,6 @@ This function terminates the program.
 
 
 #    Testing
+## Manual testing
 
-##   Accessibility
-
-[WebAIM](https://webaim.org/resources/contrastchecker/) online tool was used to check terminal colour contrast. All used colours passsed the test satisfactory.
-
-![color1](docs/img/contrast1.png)
-
-![color2](docs/img/contrast2.png)
-
-![color3](docs/img/contrast4.png)
-
-![color4](docs/img/contrast5.png)
+Details of manual testing can be found in [TESTING.md file](https://github.com/EmanuelMariusNicu/store-management/blob/main/TESTING.md)
