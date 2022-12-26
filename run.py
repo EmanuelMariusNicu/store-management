@@ -6,7 +6,7 @@ import helper
 
 
 def logo():
-    print(Fore.RED + """
+    print(Fore.GREEN + """
    _____ _                                                      
   / ____| |                                                     
  | (___ | |_ ___  _ __ ___                                      
@@ -37,7 +37,8 @@ def menu():
      4. View Cart
      5. Apply Discount
      6. Pay and Print Receipt
-     7. Quit
+     7. Show total
+     8. Quit
      """)
 
 
@@ -63,19 +64,21 @@ def display_menu():
         if not user_choice.isdigit() or int(user_choice) not in range(1, 8):
             print("Please select a valid option number from 1-7")
 
-        if user_choice == "1":
+        if user_choice == "1":              # Menu view products
             store.view_products()
-        elif user_choice == "2":
+        elif user_choice == "2":            # Menu buy project
             store.buy_product()
-        elif user_choice == "3":
+        elif user_choice == "3":            # Menu return item
             store.return_item()
-        elif user_choice == "4":
+        elif user_choice == "4":            # Menu view cart
             store.view_cart()
-        elif user_choice == "5":
+        elif user_choice == "5":            # Menu discounts
             display_discount_menu()
-        elif user_choice == "6":
+        elif user_choice == "6":            # Menu pay and print receipt
             store.pay_print_receipt()
-        elif user_choice == "7":
+        elif user_choice == "7":            # Menu administrator total sales
+            store.show_total_sale()
+        elif user_choice == "8":            # Menu quit choice
             exit_print_message()
             break
 

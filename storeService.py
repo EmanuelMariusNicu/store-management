@@ -150,6 +150,9 @@ def pay_print_receipt():
     discount_value = 1
     user_paid = 0
     products = cart.get_values()
+    if len(products) == 0:
+        print("Your cart is empty, buy something first.")
+        return
     total = 0.0
     for product in products:
         if "Discount" in product:
@@ -198,8 +201,8 @@ def apply_discount_nr2():
 
 
 def apply_discount_nr3():
-    """#discount 3 that the store has, if you buy within one hour of closing time,
-        a 30% disccount is applied to the cart"""
+    """discount 3 that the store has, if you buy within one hour of closing
+     time,a 30% disccount is applied to the cart"""
     # Closing time is 20:00
     global discount_applied
     now = datetime.datetime.now()
@@ -210,3 +213,17 @@ def apply_discount_nr3():
         print("Discount applied.")
     else: 
         print("Discount cannot be applied, valid after 7PM")
+
+
+def show_total_sale():
+    receipts_values = receipts.get_values()
+    table = Table()
+    total_sum = 0
+    
+    for receipt in receipts_values:
+        total_sum += float(receipt[1])
+    table.field_names = ["Receipt Name", "Price($)"]
+    table.add_rows(receipts_values)
+    print(table)
+    print(f"Total sum of receipts this month is: {total_sum} $")
+
