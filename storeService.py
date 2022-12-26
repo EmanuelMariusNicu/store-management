@@ -125,6 +125,10 @@ def apply_discount(option):
        you can only have a discount applied per cart/purchase
     """
     global discount_applied
+    products = cart.get_values()
+    if len(products) == 0:
+        print("Your cart is empty, buy something first.")
+        return
     if discount_applied:
         print("A discount has been applied already.")
         return
@@ -140,6 +144,7 @@ def apply_discount(option):
 # Receipt/purchase that was done, for accountant, to trac total revenue 
 # (functionality to be added later)
 # It takes into account the discount when calculating the payment
+
 
 def pay_print_receipt():
 
@@ -222,10 +227,8 @@ def show_total_sale():
     receipts_values = receipts.get_values()
     table = Table()
     total_sum = 0
-    
-    
     for receipt in receipts_values:
-        total_sum = round(total_sum, 2) +float(receipt[1])
+        total_sum = round(total_sum, 2) + float(receipt[1])
        # total_sum += float(receipt[1])
     table.field_names = ["Receipt Name", "Price($)"]
     table.add_rows(receipts_values)

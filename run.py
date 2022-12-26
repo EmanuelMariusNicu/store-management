@@ -45,6 +45,7 @@ def menu():
      """)
 # Discount function that applies for all products
 
+
 def discount_menu():
     """ Discount prices that apply"""
     print("Discount offers in our shop")
@@ -56,16 +57,17 @@ def discount_menu():
      """)
 # Menu function for choices from 1 to 8
 
+
 def display_menu():
     while True:
         menu()
-        user_choice = input("Select a choice from 1-7 to continue: ")
+        user_choice = input("Select a choice from 1-8 to continue: ")
 
         # reset screen
         helper.reset_screen()
 
         if not user_choice.isdigit() or int(user_choice) not in range(1, 8):
-            print("Please select a valid option number from 1-7")
+            print("Please select a valid option number from 1-8")
 
         if user_choice == "1":              # Menu view products
             store.view_products()
