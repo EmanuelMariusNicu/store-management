@@ -31,16 +31,15 @@ Project purpose was to build a command-line python application that allows user 
     *   [Software used](#software-used)
     *   [Python libraries/modules](#python-librariesmodules)
 5. [Testing](5-#testing)
-    *   [Automation testing](#automation-testing)
+    *   [Automated testing](#automated-testing)
         *   [Lighthouse testing](#lighthouse-testing)
-        *   [W3C CSS Validator](#w3c css validator)
+        *   [W3C CSS Validator](#w3c-css-validator)
     *   [Manual testing](#manual-testing)
     *   [Bugs/known issues](#bugsknown-issues)
 6. [Deployment](6-#deployment)
     *   [Git and GitHub](#git-and-github)
     *   [Deployment to Heroku](#deployment-to-heroku)
-7. [Possible future development](7-#possible-future-development)
-8. [Credits](8-#credits)
+7. [Credits](8-#credits)
     *   [Code](#code)
     *   [Media](#media)
     *   [Acknowledgements](#acknowledgements)
@@ -88,7 +87,7 @@ Screenshots presenting terminal and colour outputs are available in [Features](#
 
 Starting screen of the app with logo and menu:
 
-# Logic and features
+# 3. Logic and features
 
 
 ## Database structure
@@ -169,7 +168,7 @@ This function is only for internal use. Helps administrator to have a balance ab
 This function terminates the program.
 ![image](https://user-images.githubusercontent.com/108750655/209545061-1aac7e25-d797-4aeb-a703-a7f2a1a56aec.png)
 
-#   Technology
+# 4.   Technology
     
 ##  Languages used
 
@@ -208,8 +207,8 @@ This function terminates the program.
 
 - [time](https://docs.python.org/3/library/time.html) - built-in python module - used to delay logo 
 
-#    Testing
-## Automation testing
+# 5.  Testing
+## Automated testing
 ### Lighthouse testing
 ![image](https://user-images.githubusercontent.com/108750655/209577928-896b26e7-f25b-431c-a726-bd10f38f2f99.png)
 ###   W3C CSS Validator
@@ -229,7 +228,7 @@ Details of manual testing can be found in [TESTING.md file](https://github.com/E
 
 - <b>Solution:</b>
 
-#   Deployment
+# 6.  Deployment
 
 ## Git and GitHub
 
@@ -265,18 +264,8 @@ Details of manual testing can be found in [TESTING.md file](https://github.com/E
 
 7. The link to my deployed app was shown on screen: [https://store-management-base.herokuapp.com/](https://home-library-app-ci.herokuapp.com/)
 
-<br>
 
-# Possible future development
-
-If I had more time or decide to develop app further I would add/improve following functionalities: 
-- adding/editing/removing book categories instead of typing desired name. That would help keep DB entries more consistent and make input easier for the user. 
-- add function to analyze description input by user and save it in database preserving capital letters for e.g. names, new sentences,
-- add user accounts/multiple database,
-- export database to external file in printable version.
-- search database function
-
-#   Credits
+# 7. Credits
 
 ##  Code
 
