@@ -262,7 +262,7 @@ Details of manual testing can be found in [TESTING.md file](https://github.com/E
 6. In the next step I went back to "Deploy" tab and decided to use manual deployement, however automatic mode is also available to deploy chosen branch.
 
 
-7. The link to my deployed app was shown on screen: [https://store-management-base.herokuapp.com/](https://home-library-app-ci.herokuapp.com/)
+7. The link to my deployed app was shown on screen: [https://store-management-base.herokuapp.com/](https://store-management-base.herokuapp.com/)
 
 
 # 7. Credits
