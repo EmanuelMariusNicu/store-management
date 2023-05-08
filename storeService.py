@@ -55,12 +55,13 @@ def buy_product():
     add_item_to_cart(display_items)
     while True:
         user_choice = input("Continue shoping?(Yes/No): ")
-        if user_choice.isdigit():
+        if user_choice.isdigit() or user_choice.upper() not in ['YES', 'NO']:
             print("Choose Yes or No:")
         if user_choice.upper() == 'YES':
             helper.reset_screen()
             print(table)
             add_item_to_cart(display_items)
+        
         elif user_choice.upper() == 'NO':
             helper.reset_screen()
             return
@@ -76,20 +77,23 @@ def add_item_to_cart(display_items):
         with the DB/google sheet"""
     buy_item = input("Buy/Type(product name): ").title()
     if buy_item not in [x.title() for x in display_items]:
-        print("We don't have the product. Choose another product.")
+        print("We don't have the product. Choose another product.")    
+    elif any(buy_item in f for f in all_products):
         try:
             prod_out_stock = int(next(
-                             f for f in all_products if buy_item in f)[2]) == 0
+                f for f in all_products if buy_item in f)[2]) == 0
         except ValueError:
             print("Error trying to find item!")
-    elif any(buy_item in f for f in all_products) and prod_out_stock:
-        print("Product is out of stock for today.Try again tomorrow.")
-        try:
-            product = next(f for f in all_products if buy_item in f)
-        except ValueError:
-            print("Error finding product!")
-        cart.insert_row([buy_item, float(product[1])])
-        print(f"{buy_item} added to your cart.")
+        if prod_out_stock:
+            print("Product is out of stock for today.Try again tomorrow.")
+        else:
+            try:
+                product = next(f for f in all_products if buy_item in f)
+            except ValueError:
+                print("Error finding product!")
+        
+            cart.insert_row([buy_item, float(product[1])])
+            print(f"{buy_item} added to your cart.")
 
 
 def return_item():
