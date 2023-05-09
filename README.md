@@ -13,7 +13,7 @@ Project purpose was to build a command-line python application that allows user 
     *   [Strategy/Scope](#strategyscope)
     *   [Site owner goals](#site-owner-goals)
     *   [External user's goal](#external-users-goal)
-2. [User Experience (UX/UI)](#2-user-experience-ux)
+2. [User Experience (UX/UI)](#2-user-experience-ux/ui)
     *   [Colour Scheme](#colour-scheme)
 3. [Logic and features](#3-logic-and-features)
     *   [Database structure](#database-structure)
