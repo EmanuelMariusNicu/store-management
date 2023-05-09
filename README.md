@@ -9,7 +9,7 @@ Project purpose was to build a command-line python application that allows user 
 
 # Table of content
 
-1. [Project](1-#project)
+1. [Project](https://github.com/EmanuelMariusNicu/store-management/edit/main/README.md#project)
     *   [Strategy/Scope](#strategyscope)
     *   [Site owner goals](#site-owner-goals)
     *   [External user's goal](#external-users-goal)
