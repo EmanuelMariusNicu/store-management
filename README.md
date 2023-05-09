@@ -189,7 +189,6 @@ This function terminates the program.
 - [VisualStudioCode](https://code.visualstudio.com/) - VSC used to write the app.
 
 - [Text ASCII Art Generator](http://patorjk.com/software/taag/) - used to create app logo in ASCII format.
-- 
 ##  Python libraries/modules
 
 - [gspread](https://docs.gspread.org/) - used for control Google Sheets API by python.
